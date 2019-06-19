@@ -75,26 +75,7 @@ and so
 \end{equation}
 
 \subsection{Wave Potential Energy}
-By definition we have $w' = \frac{D_0 \zeta'}{D t} = \zeta'_t + U\zeta'_x + V\zeta'_y$. Following the mean flow, so that $x,y$ are now functions of $t$ and track the position of the particle at $(x_0,y_0,z,0)$, we have
-\begin{align*}
-\zeta' &= \int_{0}^t w'(x(s),y(s),z,s)\,ds \\
-&= \int_{0}^t w_0 \cos(k x(s) + l y(s) + mz - \omega s)\,ds \\
-&= \int_{0}^t w_0  \cos(k (Us + x_0) + l (Vs+v_0) + mz - \omega s)\,ds \\
-&= \left[ w_0 \frac{-1}{\Omega} \sin(k (Us + x_0) + l (Vs+v_0) + mz - \omega s)\right]_{0}^t \\
-&= \frac{-w_0 }{\Omega} \left[\sin(k (Ut +x_0) + l (Vt + y_0) + mz - \omega t) - \sin(kU x_0 + lVy_0 + mz) \right] \\
-&= \frac{-w_0 }{\Omega} \left[\sin(kUx_0 + lUy_0 + mz - \Omega t) - \sin(kU x_0 + lVy_0 + mz) \right] 
-\end{align*}
-Now
-\begin{align*}
-\bar{\zeta'^2} &= \frac{w_0^2}{\Omega^2}\frac{-\Omega}{2\pi} \int_0^{\frac{2\pi}{-\Omega}} \frac{m}{2\pi} \int_0^\frac{2\pi}{m} \frac{w_0 ^2}{\Omega ^2} \left[\sin(kUx_0 + lUy_0 + mz - \Omega t) - \sin(kU x_0 + lVy_0 + mz) \right]^2\, dz\, dt \\
-&= \frac{w_0^2}{\Omega^2} \frac{-\Omega}{2\pi} \int_0^{\frac{2\pi}{-\Omega}} 1 - \cos(-\Omega t) dt \\
-&= \frac{w_0^2}{\Omega^2}
-\end{align*}
-Thus using (15) from the paper, i.e.~the dispersion relation,
-\begin{align*}
-N^2 \bar{\zeta'^2} &= N^2 \frac{w_0^2}{\Omega^2} \\
-&= w_0^2 \frac{k^2 + l^2 + m^2}{k^2 + l^2}
-\end{align*}
+Note the method given by \citet{nappo02} doesn't work because we have a background wind. Instead adapt the method of \citet{lighthill78}. 
 
 \subsection{Internal Energy}
 From equation \ref{Eq:ip'} we have 
