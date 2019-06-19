@@ -1,0 +1,118 @@
+\documentclass[12pt]{article}
+\usepackage{hyperref}
+\bibliographystyle{agsm}
+\usepackage{har2nat}
+\usepackage{amsmath,amssymb,amsthm,amscd,verbatim,graphicx,color}
+\hypersetup{colorlinks=true, urlcolor=blue, citecolor=black, linkcolor=black}
+\usepackage[x11names, rgb]{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, margin=1.5cm]{geometry}
+\usepackage[font={small, stretch=1.3}, labelfont=bf]{caption}
+\setlength{\parskip}{0em}
+\renewcommand{\floatpagefraction}{.7}
+\linespread{1.3}
+
+\DeclareMathOperator{\sgn}{sgn}
+
+\title{\citet{bretherton66}}
+\author{Ewan Short}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Suspected Misprints}
+\begin{enumerate}
+\item
+\end{enumerate}
+
+\section{Wave Energy Equation}
+
+\subsection{Wave Kinetic Energy}
+
+Assume $w' = \Re{w_0 e^{i\phi}}$. Substituting into (30) from the paper, considering for now both real and imaginary parts, gives
+\begin{equation}
+-i\Omega u' + U_z w' +\frac{1}{\rho} i k p' = 0. \label{Eq:30a}
+\end{equation}
+Substituting into (the corrected version of) (34) from the paper gives
+\begin{equation} \frac{g}{\gamma p} (-i\Omega) p' = \frac{g}{\rho} (-i\Omega) \rho' - N^2 w' \label{Eq:34a}
+\end{equation}
+and into (33) gives
+\begin{equation}
+\frac{1}{\rho}(-i\Omega)\rho' + \frac{1}{\rho} \rho_z w' + iku'+ilv' + im w' = 0. \label{Eq:33a}
+\end{equation}
+By cross multiplying (30) and (31) from the paper we can show $v' = \frac{l}{k}$. Using this result, and substituting equation (\ref{Eq:33a}) into (\ref{Eq:34a}) gives
+\begin{align} 
+& \Rightarrow \frac{g}{\gamma p} (-i\Omega) p' = g\left[ -\frac{1}{\rho} \rho_z w' - iku' - ilv' - im w' \right] - N^2 w' \\
+&\Rightarrow ip' = \frac{\gamma p}{\Omega} \left[ \frac{1}{\rho} \rho_z w' + iku' + ilv' + im w' \right] + \frac{\gamma p}{\Omega g} N^2 w'. \label{Eq:ip'}
+\end{align}
+Now substituting this into (\ref{Eq:30a}) gives 
+\begin{align}
+& \Rightarrow -i\Omega u' + U_z w' +\frac{1}{\rho} k \left[\frac{\gamma p}{\Omega} \left[ \frac{1}{\rho} \rho_z w' + iku' + ilv' + im w' \right] + \frac{\gamma p}{\Omega g} N^2 w' \right] = 0 \\
+& \Rightarrow -i\Omega u' + U_z w' +\frac{1}{\rho} k\frac{c^2}{\Omega}\rho_z w' + i k^2 \frac{c^2}{\Omega}u' + i l^2 \frac{c^2}{\Omega} u' + i m k \frac{c^2}{\Omega} w' + k \frac{c^2}{\Omega g} N^2 w' = 0. 
+\end{align}
+Now taking just the real part, and then just the coefficients of the $\sin$ terms, gives
+\begin{align}
+& \Rightarrow \Omega u_0 - k^2 \frac{c^2}{\Omega} u_0 - l^2 \frac{c^2}{\Omega} u_0 - mk\frac{c^2}{\Omega} w_0 = 0 \\ 
+& \Rightarrow \left[\frac{\Omega ^2}{c^2} - k^2 - l^2 \right] u_0 = mkw_0 \\ 
+& \Rightarrow u_0 = -mk \frac{1}{k^2 + l^2 - \frac{ \Omega ^2}{c^2} } w_0 
+\label{Eq:u_0}
+\end{align}
+Similarly we can show 
+\begin{equation}
+v_0 = -ml \frac{1}{k^2 + l^2 - \frac{ \Omega ^2}{c^2} } w_0 
+\end{equation}
+Thus $u'^2 + v'^2 + w'^2$
+\begin{align}
+&  = \sin^2\phi \left\{ \frac{m^2}{\left(k^2 + l^2 -\frac{\Omega ^2}{c^2}\right)^2} \left(k^2 + l^2\right)w_0^2 + w_0^2 \right\}  \\
+&  = \sin^2\phi \left\{ \frac{m^2}{\left(k^2 + l^2 -\frac{\Omega^2}{c^2}\right)^2} \left(k^2 + l^2\right)w_0^2  - \frac{m^2 \frac{\Omega^2}{c^2}}{\left(k^2 + l^2 -\frac{\Omega^2}{c^2}\right)^2}w_0^2 + \frac{m^2 \frac{\Omega^2}{c^2}}{\left(k^2 + l^2 -\frac{\Omega^2}{c^2}\right)^2}w_0^2 + w_0^2 \right\} \\
+&  = \sin^2\phi \left\{ \frac{k^2 + l^2  + m^2 -\frac{\Omega^2}{c^2}}{\left(k^2 + l^2 -\frac{\Omega^2}{c^2}\right)} w_0^2 + \frac{m^2 \frac{\Omega^2}{c^2}}{\left(k^2 + l^2 -\frac{\Omega^2}{c^2}\right)^2}w_0^2 \right\}
+\end{align}
+and so 
+\begin{equation}
+\overline{u'^2} + \overline{v'^2} + \overline{w'^2} = \frac{1}{2} w_0^2 \left\{ \frac{k^2 + l^2  + m^2 -\frac{\Omega^2}{c^2}}{\left(k^2 + l^2 -\frac{\Omega^2}{c^2}\right)} + \frac{m^2 \frac{\Omega^2}{c^2}}{\left(k^2 + l^2 -\frac{\Omega^2}{c^2}\right)^2} \right\}
+\end{equation}
+
+\subsection{Wave Potential Energy}
+By definition we have $w' = \frac{D_0 \zeta'}{D t} = \zeta'_t + U\zeta'_x + V\zeta'_y$. Following the mean flow, so that $x,y$ are now functions of $t$ and track the position of the particle at $(x_0,y_0,z,0)$, we have
+\begin{align*}
+\zeta' &= \int_{0}^t w'(x(s),y(s),z,s)\,ds \\
+&= \int_{0}^t w_0 \cos(k x(s) + l y(s) + mz - \omega s)\,ds \\
+&= \int_{0}^t w_0  \cos(k (Us + x_0) + l (Vs+v_0) + mz - \omega s)\,ds \\
+&= \left[ w_0 \frac{-1}{\Omega} \sin(k (Us + x_0) + l (Vs+v_0) + mz - \omega s)\right]_{0}^t \\
+&= \frac{-w_0 }{\Omega} \left[\sin(k (Ut +x_0) + l (Vt + y_0) + mz - \omega t) - \sin(kU x_0 + lVy_0 + mz) \right] \\
+&= \frac{-w_0 }{\Omega} \left[\sin(kUx_0 + lUy_0 + mz - \Omega t) - \sin(kU x_0 + lVy_0 + mz) \right] 
+\end{align*}
+Now
+\begin{align*}
+\bar{\zeta'^2} &= \frac{w_0^2}{\Omega^2}\frac{-\Omega}{2\pi} \int_0^{\frac{2\pi}{-\Omega}} \frac{m}{2\pi} \int_0^\frac{2\pi}{m} \frac{w_0 ^2}{\Omega ^2} \left[\sin(kUx_0 + lUy_0 + mz - \Omega t) - \sin(kU x_0 + lVy_0 + mz) \right]^2\, dz\, dt \\
+&= \frac{w_0^2}{\Omega^2} \frac{-\Omega}{2\pi} \int_0^{\frac{2\pi}{-\Omega}} 1 - \cos(-\Omega t) dt \\
+&= \frac{w_0^2}{\Omega^2}
+\end{align*}
+Thus using (15) from the paper, i.e.~the dispersion relation,
+\begin{align*}
+N^2 \bar{\zeta'^2} &= N^2 \frac{w_0^2}{\Omega^2} \\
+&= w_0^2 \frac{k^2 + l^2 + m^2}{k^2 + l^2}
+\end{align*}
+
+\subsection{Internal Energy}
+From equation \ref{Eq:ip'} we have 
+\begin{equation}
+ip' = \frac{\gamma p}{\Omega} \left[ \frac{1}{\rho} \rho_z w' + iku' + i\frac{l^2}{k}u' + im w' \right] + \frac{\gamma p}{\Omega g} N^2 w'.
+\end{equation}
+Substituting equation \ref{Eq:u_0} gives
+\begin{align}
+ip' & = \frac{\gamma p}{\Omega} \left[ \frac{1}{\rho} \rho_z w' - im\left(  \frac{k^2 + l^2}{k^2 + l^2 - \frac{ \Omega ^2}{c^2} }\right)w' + im w' \right] + \frac{\gamma p}{\Omega g} N^2 w' \\ 
+&= \frac{\gamma p}{\Omega} \left[ \frac{1}{\rho} \rho_z w' - im\left(  \frac{-\frac{\Omega^2}{c^2}}{k^2 + l^2 - \frac{ \Omega ^2}{c^2} }\right) w' \right] + \frac{\gamma p}{\Omega g} N^2 w'
+\end{align}
+Taking real parts and equating $\sin$ coefficients gives
+\begin{align}
+& \Rightarrow -p_0 = \frac{\gamma p}{\Omega} \left[m\left(  \frac{-\frac{\Omega^2}{c^2}}{k^2 + l^2 - \frac{ \Omega ^2}{c^2} }\right) w_0 \right] \\
+& \Rightarrow \frac{1}{c^2 \rho^2} p'^2 = \frac{\gamma^2 p^2}{c^2 \rho^2 \Omega^2} m^2 \frac{\frac{\Omega^4}{c^4}}{\left(k^2 + l^2 - \frac{ \Omega ^2}{c^2}\right)^2 } w_0^2 \sin^2\phi \\
+& \Rightarrow \frac{1}{c^2 \rho^2} p'^2 = \frac{c^4}{c^2 \Omega^2} m^2 \frac{\frac{\Omega^4}{c^4}}{\left(k^2 + l^2 - \frac{ \Omega ^2}{c^2}\right)^2 } w_0^2 \sin^2\phi \\
+& \Rightarrow \frac{1}{c^2 \rho^2} p'^2 =  m^2 \frac{\frac{\Omega^2}{c^2}}{\left(k^2 + l^2 - \frac{ \Omega ^2}{c^2}\right)^2 } w_0^2 \sin^2\phi   
+\end{align}
+\bibliography{../../Bibliography/ewansbibli.bib}
+
+\end{document}
