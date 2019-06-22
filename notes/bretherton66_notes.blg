@@ -3,44 +3,44 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: bretherton66_notes.aux
 The style file: agsm.bst
 Database file #1: ../../Bibliography/ewansbibli.bib.bib
-You've used 3 entries,
+You've used 4 entries,
             2909 wiz_defined-function locations,
-            659 strings with 5225 characters,
-and the built_in function-call counts, 6619 in all, are:
-= -- 1019
-> -- 72
+            663 strings with 5283 characters,
+and the built_in function-call counts, 9219 in all, are:
+= -- 1435
+> -- 96
 < -- 0
-+ -- 453
-- -- 21
-* -- 515
-:= -- 1447
-add.period$ -- 3
-call.type$ -- 3
-change.case$ -- 40
-chr.to.int$ -- 3
-cite$ -- 3
-duplicate$ -- 48
-empty$ -- 95
-format.name$ -- 27
-if$ -- 1162
++ -- 642
+- -- 28
+* -- 719
+:= -- 2000
+add.period$ -- 4
+call.type$ -- 4
+change.case$ -- 53
+chr.to.int$ -- 4
+cite$ -- 4
+duplicate$ -- 64
+empty$ -- 124
+format.name$ -- 36
+if$ -- 1623
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 5
-newline$ -- 14
-num.names$ -- 30
-pop$ -- 19
+missing$ -- 7
+newline$ -- 17
+num.names$ -- 40
+pop$ -- 28
 preamble$ -- 1
-purify$ -- 45
+purify$ -- 60
 quote$ -- 0
-skip$ -- 31
+skip$ -- 40
 stack$ -- 0
-substring$ -- 1398
-swap$ -- 5
-text.length$ -- 42
+substring$ -- 1975
+swap$ -- 6
+text.length$ -- 56
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 8
+type$ -- 10
 warning$ -- 0
-while$ -- 64
+while$ -- 85
 width$ -- 0
-write$ -- 41
+write$ -- 53

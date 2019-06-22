@@ -22,12 +22,97 @@
 
 \maketitle
 
-\section{Suspected Misprints}
+\section{Misprints}
 \begin{enumerate}
 \item
+Equation (34) should be $$\frac{g}{\gamma p} \frac{D_0 p'}{Dt} - \frac{g}{\rho}\frac{D_0 \rho'}{Dt} = -N^2 w'.$$
+Note that the correct form can easily be derived from 
+$$N^2 = \frac{g}{\theta}\theta_z =  -\frac{g}{\rho}\rho_z - \frac{g^2}{c^2}$$
+and the equation linking pressure and density
+$$ \frac{D p}{D t} = c^2 \frac{D \rho}{D t}$$
+given by \citet[p. 292]{lighthill78}.
 \end{enumerate}
 
+\section{Introduction}
+Only short wavelength waves studied here. WKB approximation used. The Richardson number needs to be large - recall the Richardson number
+\begin{equation}
+\text{Ri} = \frac{g}{\rho}\frac{\frac{\partial \rho}{\partial z}}{(\frac{\partial	u}{\partial z})^2}
+\end{equation}
+represents the ratio of buoyancy to shear flow, and that this needs to be large in this approximation. The wave group moves with the local group velocity, and wave energy is proportional to the flow relative frequency. A wave packet, under this approximation, can never pass through a critical level at which its horizontal phase velocity is equal to the horizontal flow speed. Furthermore, the wave is not reflected at this level. 
+
+An interesting note on page 467 is that waves can also grow in vertical wind shear, converting it into gravitational potential energy. Note that gravity waves studied here have frequency less than the BV frequency - see \citet{lighthill78} for discussion of this point. 
+
+Another key idea is that in a fluid where key properties vary with position, wave groups cannot be easily described by a superposition of $\sin$ waves over a spectrum of frequency and wavenumbers, however, they can be understood using the WKB approximation. Provided variations in the local dominant wavenumber, frequency and amplitude are small over distances of order one wavelength and times of order one period, governing equations can be simplified. To be a good first approximation, they require that the vertical wavelengths be small compared to that of $U(z)$, $V(z)$ and $N(z)$ and that
+\begin{equation}
+\text{Ri} = \frac{N^2}{U_z^2+V_z^2}
+\end{equation}
+be large. 
+
+Wave energy is \textit{not} conserved following the group velocity (i.e. ``following the packet") but is proportional to $\Omega$. ``Changes in wave energy occur because an upward propagating internal wave is associated with a vertical transfer of horizontal momentum, and in a shear flow there is a continual transfer of energy between the mean flow and the wave, as the momentum is transferred up or down the mean velocity gradient (Eliassen and Palm 1962)."
+
+Thus a key idea is that since dominant $\omega$ and $k$ are constant as the wave moves, there may be critical level in the mean flow at which $\Omega = 0$. The WKB approximation suggests that the vertical component of group velocity in the vicinity of the critical level is proportional to the square of the vertical distance from it.
+
+It is key to consider the limitations of the wave group approach considered in this paper. A companion paper, (Booker and Bretherton 1966) considers the effect of the critical level on travelling and standing wave trains when Ri is not large - in this case a wave is transmitted, but it is attenuated. 
+
+Furthermore, the W.K.B approximation cannot describe partial reflections that can occur when $U,V$ or $N$ are discontinuous or change rapidly with height. 
+
+\section{WKB for Boussinesq Fluid}
+We have (2)-(4) from paper implie
+\begin{align*}
+\frac{D_0 u'_x}{Dt} + U_z w'_x +\frac{1}{\overline{\rho}}p'_xx = 0 \\
+\frac{D_0 v'_y}{Dt} + V_z w'_y +\frac{1}{\overline{\rho}}p'_yy = 0 \\
+\frac{D_0 w'_z}{Dt} + U_z w'_x + V_z w'_y + \sigma'_z +\frac{1}{\overline{\rho}}p'_zz = 0.
+\end{align*}
+Summing and applying (5) gives
+\begin{align}
+&\Rightarrow \frac{1}{\overline{\rho}}\nabla^2 p' +2U_zw_x'+2V_zw_y' + \sigma_z' = 0 \\
+&\Rightarrow \frac{1}{\overline{\rho}}\nabla^2 p'_z +2U_{zz}w_x'+2V_{zz}w_y' + 2U_zw_{xz}'+2V_z w_{yz}' + \sigma_{zz}' = 0 \\
+&\Rightarrow \frac{D_0}{Dt}\frac{1}{\overline{\rho}}\nabla^2 p'_z + \frac{D_0}{Dt}\left(2U_{zz}w_x'+2V_{zz}w_y' + 2U_zw_{xz}'+2V_z w_{yz}' \right) + \frac{D_0}{Dt}\sigma_{zz}' = 0 \label{Eq:diamond}
+\end{align}
+
+Furthermore, taking $\nabla^2 (4)$ gives
+\begin{align}
+&\Rightarrow \nabla \cdot \left(\frac{D_0 \nabla w'}{D t} + (0,0,U_z w'_x + V_z w'_y) + \nabla \sigma' +\frac{1}{\overline{\rho}} \nabla p_z' \right) = 0 \\
+&\Rightarrow \frac{D_0 \nabla^2 w'}{D t} + U_z w'_{zx} + V_z w'_{zy} + U_{zz} w'_x + V_{zz} w'_y + U_z w'_{xz} + V_z w'_{yz} + \nabla^2 \sigma' +\frac{1}{\overline{\rho}} \nabla^2 p_z' = 0 \\
+&\Rightarrow \frac{D_0 \nabla^2 w'}{D t} + 2U_z w'_{zx} + 2V_z w'_{zy} + U_{zz} w'_x + V_{zz} w'_y + \nabla^2 \sigma' +\frac{1}{\overline{\rho}} \nabla^2 p_z' = 0 \\
+&\Rightarrow \frac{D_0^2 \nabla^2 w'}{D t^2} + \frac{D_0}{Dt}\left(2U_z w'_{zx} + 2V_z w'_{zy} + U_{zz} w'_x + V_{zz} w'_y\right) + \frac{D_0}{Dt}\nabla^2 \sigma' + \frac{D_0}{Dt}\frac{1}{\overline{\rho}} \nabla^2 p_z' = 0  \label{Eq:star}
+\end{align}
+Note also that taking second $x$ and $y$ derivatives of (6) gives
+\begin{equation}
+\frac{D_0 \sigma'_{xx} +\sigma'_{yy}}{D t} = N^2 (w_{xx}'+w_{yy}') \label{Eq:cross}
+\end{equation}
+Thus subtracting \ref{Eq:diamond} from \ref{Eq:star} and then substituing \ref{Eq:cross} gives
+\begin{align}
+\frac{D_0^2 \nabla^2 w'}{D t^2} - \frac{D_0^2 }{D t^2} \left(U_{zz}w_x' + V_{zz} w_y') + N^2 (w_{xx}'+w_{yy}'\right) = 0
+\end{align}
+as required.
+
+Next, the WKB approximation begins. \citet[p. 317]{sutherland10} state that ``The essence of ray [WKB] theory is to suppose that the wave structure can be represented by the product of a slowly varying amplitude function multiplied by a rapidly varying oscillatory function." \citet[p. 470]{bretherton66} basically makes a change of variable $\tau = \epsilon t$, then look for solutions of the form
+\begin{equation}
+w' = R[(W(x,y,z,\tau)+\epsilon W_1 + \epsilon^2 W_2 t + \epsilon^3 W_3 t^2 + \cdots ) e^{i\epsilon^{-1} \phi} ]
+\end{equation}
+where $\epsilon^{-1}\phi(x,y,z,\tau)$ is phase. The idea is that we want to consider $\epsilon$ small, so that phase varies much faster than the amplitude function $W$. The terms $\epsilon^i W_i t^{i-1}$ represent corrections to the function $W$ - I don't think the $W_i$ are necessarily constants (see the WKB wiki page). These terms approach $0$ as $\epsilon \to 0$ - not clear to me whether we recover the fully general case in this situation. Remembering $k = \frac{2\pi}{\lambda_x} = \epsilon^{-1} \phi_x$ we have that the wavelengths approach zero as $\epsilon \to 0$. Similarly wave period approaches zero as $\epsilon \to 0$. Thus as $\epsilon \to 0$ we are effectively considering waves of smaller and smaller scales, then asking how the amplitude function $W$ varies over these waves? In the limit to we basically just recover the amplitude $RW$?
+
+Equation (14) from the paper can then be simply derived by noting that the dominant $\epsilon^{-2}$ group requires all derivatives of $e^{ i \epsilon^{-1} \phi}$, i.e. other terms emerging from product rule can be neglected. Furthermore the $U_{zz} = \epsilon U^*_{zz}, V_{zz} = \epsilon V^*_{zz}$ terms in (8) introduce factors of $\epsilon$, bringing order back down to $\epsilon^{-1}$. Furthermore, the first bracketed term of (14) contributes no factors of $\epsilon^{-1}$ after replacing $U,V$ with $U^*, V^*$. 
+
+\section{Variation with Time Of Wavenumber and Frequency}
+
+Note the leading $\epsilon^{-2}$ terms give only information about the ``local motion", i.e. how $\phi$ changes with $x,y,z,t$, i.e.~of the local behaviour of $\omega,k,l,m$. To get info on $W$ we would need to solve (10) from the paper to order $\epsilon^{-1}$. However, this is actually immediately implicit from what has been developed so far. See \citet[p. 471]{bretherton66}. Easy to show that the group velocity is equal to the sum of the local wind and the relative group velocity. 
+
+\section{Variations of the Amplitude Function}
+Equation (22) is not that bad. Just think about equation (8), but all the possible ways of taking derivatives to end up with coefficients of $\epsilon^{-1}$. As in the paper, can ignore $W_1$ terms. Only confusing part is the middle term of (8), which is either $O(\epsilon^{0})$ or $O(\epsilon^{1})$. The point made in how to derive (23) from the paper is challenging but makes sense. Note equation (23) has also multiplied equation (22) by $\epsilon$. Dividing (23) through by $-\frac{\partial Q}{\partial \Omega}$ gives (25). If we assume $W=|W|e^{i\alpha}$, we can show that the real and imaginary parts of (25) are equivalent to the statements
+\begin{align*}
+\frac{D_g \alpha}{Dt} &= 0 \\
+\frac{D_g F}{Dt} + (\nabla\cdot \boldsymbol{u}_g)F &= 0
+\end{align*}  
+where 
+\begin{align*}
+F = \frac{|W|^2 (k^2+l^2+m^2)}{\Omega (k^2+l^2)}.
+\end{align*}
+This is the main result of the paper. $F$ is the total wave energy per unit volume divided by relative frequency, and the above shows that as long as the group velocity is non-divergent, this is conserved following the group velocity!
+
 \section{Wave Energy Equation}
+We are trying to show that for a compressible fluid the mean wave kinetic energy is half the mean total energy \citep[p. 476]{bretherton66}.
 
 \subsection{Wave Kinetic Energy}
 
@@ -75,7 +160,27 @@ and so
 \end{equation}
 
 \subsection{Wave Potential Energy}
-Note the method given by \citet{nappo02} doesn't work because we have a background wind. Instead adapt the method of \citet{lighthill78}. 
+Note the method given by \citet{nappo02} doesn't work because we have a background wind. Instead adapt the method of \citet{lighthill78}. The corrected version of equation (34) from the paper gives
+\begin{equation}
+\frac{g}{\gamma p} \frac{D_0 p'}{Dt} - \frac{g}{\rho}\frac{D_0 \rho'}{Dt} = -N^2 w'
+\end{equation}
+so that integrating with respect to time following the mean flow, and assuming $p'(0)=\rho'(0)=\zeta'(0)=0$, gives
+\begin{align*}
+-N^2 \zeta' &= \frac{g}{\gamma p} p' - \frac{g}{\rho}\rho' 
+\end{align*}
+Note also that (34) from the paper also implies
+\begin{align*}
+& \Rightarrow \frac{g}{\gamma p} (-i\Omega) p' - \frac{g}{\rho}(-i\Omega)\rho' = -N^2 w' \\
+&\Rightarrow{} \frac{g}{\gamma p} p' - \frac{g}{\rho}\rho' = -iN^2\frac{1}{\Omega} w' \\
+& \Rightarrow \zeta'= \frac{i}{\Omega} w' \\
+& \Rightarrow N^2 \zeta'^2 = \frac{-1}{\Omega^2} w'^2
+\end{align*}
+Note now that equation (51) of \citet{lighthill78} gives a dispersion relation, which ignoring the imaginary component is 
+\begin{align*}
+& c^{-2}\omega^4 - (k^2+l^2+m^2)\omega^2 + (k^2+l^2)N^2 = 0 \\
+\Rightarrow & \frac{\omega^2}{c^2} - (k^2+l^2+m^2) = - (k^2+l^2)N^2 \frac{1}{\omega^2}
+\end{align*}
+Can't quite get this part to work - sigh.
 
 \subsection{Internal Energy}
 From equation \ref{Eq:ip'} we have 
@@ -85,11 +190,11 @@ ip' = \frac{\gamma p}{\Omega} \left[ \frac{1}{\rho} \rho_z w' + iku' + i\frac{l^
 Substituting equation \ref{Eq:u_0} gives
 \begin{align}
 ip' & = \frac{\gamma p}{\Omega} \left[ \frac{1}{\rho} \rho_z w' - im\left(  \frac{k^2 + l^2}{k^2 + l^2 - \frac{ \Omega ^2}{c^2} }\right)w' + im w' \right] + \frac{\gamma p}{\Omega g} N^2 w' \\ 
-&= \frac{\gamma p}{\Omega} \left[ \frac{1}{\rho} \rho_z w' - im\left(  \frac{-\frac{\Omega^2}{c^2}}{k^2 + l^2 - \frac{ \Omega ^2}{c^2} }\right) w' \right] + \frac{\gamma p}{\Omega g} N^2 w'
+&= \frac{\gamma p}{\Omega} \left[ \frac{1}{\rho} \rho_z w' + im\left(  \frac{-\frac{\Omega^2}{c^2}}{k^2 + l^2 - \frac{ \Omega ^2}{c^2} }\right) w' \right] + \frac{\gamma p}{\Omega g} N^2 w'
 \end{align}
 Taking real parts and equating $\sin$ coefficients gives
 \begin{align}
-& \Rightarrow -p_0 = \frac{\gamma p}{\Omega} \left[m\left(  \frac{-\frac{\Omega^2}{c^2}}{k^2 + l^2 - \frac{ \Omega ^2}{c^2} }\right) w_0 \right] \\
+& \Rightarrow -p_0 = \frac{\gamma p}{\Omega} \left[m\left(  \frac{\frac{\Omega^2}{c^2}}{k^2 + l^2 - \frac{ \Omega ^2}{c^2} }\right) w_0 \right] \\
 & \Rightarrow \frac{1}{c^2 \rho^2} p'^2 = \frac{\gamma^2 p^2}{c^2 \rho^2 \Omega^2} m^2 \frac{\frac{\Omega^4}{c^4}}{\left(k^2 + l^2 - \frac{ \Omega ^2}{c^2}\right)^2 } w_0^2 \sin^2\phi \\
 & \Rightarrow \frac{1}{c^2 \rho^2} p'^2 = \frac{c^4}{c^2 \Omega^2} m^2 \frac{\frac{\Omega^4}{c^4}}{\left(k^2 + l^2 - \frac{ \Omega ^2}{c^2}\right)^2 } w_0^2 \sin^2\phi \\
 & \Rightarrow \frac{1}{c^2 \rho^2} p'^2 =  m^2 \frac{\frac{\Omega^2}{c^2}}{\left(k^2 + l^2 - \frac{ \Omega ^2}{c^2}\right)^2 } w_0^2 \sin^2\phi   
